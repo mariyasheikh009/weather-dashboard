@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather Dashboard</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-container">
+    <!-- Header -->
+    <header class="header">
+      <div class="header-left">
+        <form class="search-bar" id="searchForm">
+          <input 
+            type="text" 
+            id="searchInput" 
+            placeholder="Search for location" 
+            autocomplete="off"
+          />
+          <button type="submit">Search</button>
+        </form>
+      </div>
+      
+      <div class="header-right">
+        <div class="location-pill" id="locationPill">
+          <span id="locationNameHeader">Indor</span>
+          <span class="sun-icon">☀️</span>
+          <span id="currentTempHeader">6°</span>
+          <button class="refresh-btn" id="refreshBtn">↻</button>
+        </div>
+      </div>
+    </header>
+
+    <div class="main-layout">
+      <!-- Left Sidebar Navigation -->
+      <aside class="sidebar">
+        <nav class="nav-menu">
+          <button class="nav-item active" data-view="current">
+            <span class="nav-icon">☀️</span>
+            <span class="nav-text">Current</span>
+          </button>
+          <button class="nav-item" data-view="hourly">
+            <span class="nav-icon">🕒</span>
+            <span class="nav-text">Hourly</span>
+          </button>
+          <button class="nav-item" data-view="details">
+            <span class="nav-icon">📋</span>
+            <span class="nav-text">Details</span>
+          </button>
+          <button class="nav-item" data-view="maps">
+            <span class="nav-icon">🗺</span>
+            <span class="nav-text">Maps</span>
+          </button>
+          <button class="nav-item" data-view="monthly">
+            <span class="nav-icon">📅</span>
+            <span class="nav-text">Monthly</span>
+          </button>
+          <button class="nav-item" data-view="trends">
+            <span class="nav-icon">📈</span>
+            <span class="nav-text">Trends</span>
+          </button>
+          <button class="nav-item" data-view="news">
+            <span class="nav-icon">📰</span>
+            <span class="nav-text">News</span>
+          </button>
+        </nav>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="content">
+        <!-- Location Header -->
+        <div class="location-header">
+          <div class="location-info">
+            <h1 class="location-name" id="locationName">Indor</h1>
+            <p class="location-subtext">Please wait</p>
+          </div>
+          <span class="status-indicator" id="statusIndicator">
+            <span class="status-dot"></span>
+            <span class="status-text">Live</span>
+          </span>
+        </div>
+
+        <!-- Weather Grid -->
+        <div class="weather-grid">
+          <!-- Current Weather Card -->
+          <div class="current-weather-card">
+            <div class="card-header">
+              <h2 class="card-title">Current weather</h2>
+              <p class="last-updated" id="lastUpdated">Last updated: --:--:--</p>
+              <button class="report-btn" id="reportBtn">
+                <span class="report-icon">💬</span>
+                <span>Seeing different weather?</span>
+              </button>
+            </div>
+
+            <div class="current-main">
+              <div class="weather-display">
+                <div class="weather-icon-large" id="weatherIcon">☀️</div>
+                <div class="temperature-display">
+                  <span class="temp-value" id="currentTemp">6</span>
+                  <span class="temp-unit">°C</span>
+                </div>
+                <div class="weather-condition">
+                  <h3 class="condition-text" id="conditionText">Mainly Clear</h3>
+                  <p class="feels-like">Feels like <span id="feelsLike">1</span>°</p>
+                </div>
+              </div>
+
+              <div class="weather-summary" id="weatherSummary">
+                Loading the latest weather forecast...
+              </div>
+
+              <div class="weather-stats">
+                <div class="stat-item">
+                  <div class="stat-label">Air quality</div>
+                  <div class="stat-value" id="airQuality">--</div>
+                  <div class="stat-subtext" id="airQualityText">--</div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-label">Wind</div>
+                  <div class="stat-value" id="windSpeed">--</div>
+                  <div class="stat-subtext" id="windDirection">--</div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-label">Humidity</div>
+                  <div class="stat-value" id="humidity">--</div>
+                  <div class="stat-subtext">Relative</div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-label">Visibility</div>
+                  <div class="stat-value" id="visibility">--</div>
+                  <div class="stat-subtext">Distance</div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-label">Pressure</div>
+                  <div class="stat-value" id="pressure">--</div>
+                  <div class="stat-subtext">Sea level</div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-label">Dew point</div>
+                  <div class="stat-value" id="dewPoint">--</div>
+                  <div class="stat-subtext">Temperature</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Map Card -->
+          <div class="map-card">
+            <div class="map-toolbar">
+              <button class="map-tool active">🌡</button>
+              <button class="map-tool">💧</button>
+              <button class="map-tool">💨</button>
+              <button class="map-tool selected">🌫</button>
+            </div>
+            <div class="map-container">
+              <iframe id="mapFrame" src="" frameborder="0"></iframe>
+            </div>
+            <div class="map-footer">
+              <span class="map-caption" id="mapCaption">Map loading...</span>
+              <a href="#" class="map-link" id="mapLink" target="_blank">Open Map</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hourly Section -->
+        <div class="hourly-section">
+          <div class="hourly-header">
+            <h2 class="section-title">Hourly</h2>
+            <div class="metric-tabs">
+              <button class="metric-tab active" data-metric="temp">Overview</button>
+              <button class="metric-tab" data-metric="precip">Precipitation</button>
+              <button class="metric-tab" data-metric="wind">Wind</button>
+              <button class="metric-tab" data-metric="air">Air Quality</button>
+              <button class="metric-tab" data-metric="humidity">Humidity</button>
+              <button class="metric-tab" data-metric="cloud">Cloud cover</button>
+            </div>
+          </div>
+
+          <!-- Day Cards -->
+          <div class="day-cards" id="dayCards">
+            <!-- Generated by JavaScript -->
+          </div>
+
+          <!-- Chart Card -->
+          <div class="chart-card">
+            <div class="chart-header">
+              <h3 class="chart-title" id="chartTitle">Overview</h3>
+              <label class="toggle-switch">
+                <input type="checkbox" id="feelsToggle" />
+                <span class="toggle-slider"></span>
+                <span class="toggle-label">Feels like</span>
+              </label>
+            </div>
+            <div class="hourly-timeline" id="hourlyTimeline">
+              <!-- Generated by JavaScript -->
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav">
+      <button class="mobile-nav-item active" data-view="current">
+        <span class="mobile-icon">☀️</span>
+        <span class="mobile-text">Current</span>
+      </button>
+      <button class="mobile-nav-item" data-view="hourly">
+        <span class="mobile-icon">🕒</span>
+        <span class="mobile-text">Hourly</span>
+      </button>
+      <button class="mobile-nav-item" data-view="maps">
+        <span class="mobile-icon">🗺</span>
+        <span class="mobile-text">Maps</span>
+      </button>
+      <button class="mobile-nav-item" data-view="details">
+        <span class="mobile-icon">📋</span>
+        <span class="mobile-text">Details</span>
+      </button>
+      <button class="mobile-nav-item" data-view="menu">
+        <span class="mobile-icon">≡</span>
+        <span class="mobile-text">More</span>
+      </button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
