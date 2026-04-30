@@ -29,11 +29,11 @@ It is designed with a clean interface and smooth user experience.
 
 ## 📸 Screenshots
 
-<img src="./screenshot-1.png" width="700"/>
+<img src="Screenshot-1.png" width="700"/>
 
 <br><br>
 
-<img src="./screenshot-2.png" width="700"/>
+<img src="Screenshot-2.png" width="700"/>
 
 ---
 
