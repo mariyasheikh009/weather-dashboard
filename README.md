@@ -38,11 +38,11 @@ It is designed with a clean interface and smooth user experience.
 ## 📸 Screenshots
 
 <p align="center">
-  <img src="Screenshot-1" width="700"/>
+  <img src="Screenshot-1.png" width="700"/>
 </p>
 
 <p align="center">
-  <img src="Screenshot-2" width="700"/>
+  <img src="Screenshot-2.png" width="700"/>
 </p>
 
 ---
