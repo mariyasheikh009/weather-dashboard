@@ -1,4 +1,6 @@
---- Weather Dashboard---
+# **WEATHER DASHBOARD 🌦️**
+
+---
 
 ## ✨ Overview
 
@@ -18,32 +20,20 @@ It is designed with a clean interface and smooth user experience.
 
 ## 🛠️ Tech Stack
 
-<p align="center">
-
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" height="50"/>
-  <br><b>HTML</b><br><br>
-
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" height="50"/>
-  <br><b>CSS</b><br><br>
-
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" height="50"/>
-  <br><b>JavaScript</b><br><br>
-
-🌐 <b>Weather API</b>
-
-</p>
+* <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" height="20"/> HTML
+* <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" height="20"/> CSS
+* <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" height="20"/> JavaScript
+* 🌐 Weather API
 
 ---
 
 ## 📸 Screenshots
 
-<p align="center">
-  <img src="Screenshot-1.png" width="700"/>
-</p>
+<img src="./screenshot-1.png" width="700"/>
 
-<p align="center">
-  <img src="Screenshot-2.png" width="700"/>
-</p>
+<br><br>
+
+<img src="./screenshot-2.png" width="700"/>
 
 ---
 
